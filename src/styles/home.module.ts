@@ -6,16 +6,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
-
-export const ContentLeft = styled.div`
-  width: 50%;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
 
   h1 {
     font-size: 48px;
@@ -27,6 +17,24 @@ export const ContentLeft = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary.style.fontFamily};
     font-weight: 300;
   }
+
+  &.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+  }
+`
+
+export const ContentLeft = styled.div`
+  width: 50%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
   .social-section {
     position: fixed;
@@ -42,10 +50,24 @@ export const ContentLeft = styled.div`
   }
 `
 
+export const SocialSection = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  img {
+    margin-left: 10px;
+  }
+`
+
 export const Text = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  &.mobile {
+    margin-top: 10vh;
+  }
 `
 
 export const ContentRight = styled.div`
@@ -70,6 +92,17 @@ export const ContentCenter = styled.div`
   justify-content: center;
 
   img {
+    width: 90%;
+    object-fit: contain;
+  }
+`
+export const ContentImage = styled.div`
+  width: 95vw;
+  height: 70vh;
+  -webkit-mask-image: linear-gradient(to top, transparent 2%, black 50%);
+
+  img {
     width: 100%;
+    object-fit: cover;
   }
 `
