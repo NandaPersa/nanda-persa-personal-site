@@ -1,8 +1,13 @@
-import { Rajdhani } from '@next/font/google'
+import { Rajdhani, Rubik } from '@next/font/google'
 
 const primaryFont = Rajdhani({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const secondaryFont = Rubik({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
 })
 
 const Theme = {
@@ -18,6 +23,7 @@ const Theme = {
   },
   fonts: {
     primary: primaryFont,
+    secondaryFont: secondaryFont,
   },
   fontSizes: {
     small: '1em',

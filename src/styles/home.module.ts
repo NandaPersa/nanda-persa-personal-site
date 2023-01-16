@@ -37,12 +37,11 @@ export const ContentLeft = styled.div`
   justify-content: center;
 
   .social-section {
-    position: fixed;
+    position: absolute;
     z-index: 999;
     display: flex;
     align-items: center;
     bottom: 0;
-    margin-bottom: 10px;
 
     img {
       margin-left: 10px;
@@ -80,6 +79,12 @@ export const ContentRight = styled.div`
   img {
     width: 100%;
   }
+
+  &.no-image {
+    background-image: none;
+    display: flex;
+    justify-content: flex-start;
+  }
 `
 
 export const ContentCenter = styled.div`
@@ -104,5 +109,62 @@ export const ContentImage = styled.div`
   img {
     width: 100%;
     object-fit: cover;
+  }
+`
+export const ContentAbout = styled.div`
+  width: 100%;
+  height: 500px;
+  padding: 30px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: aliceblue;
+
+  .animation {
+    width: 50%;
+    height: 100%;
+
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 90px;
+  }
+`
+
+export const ContentTextAbout = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: ${({ theme }) => theme.color.primary.secondMain};
+    font-size: 30px;
+    font-family: ${({ theme }) =>
+      theme.fonts.primary.style.fontFamily} !important;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  p,
+  strong {
+    color: ${({ theme }) => theme.color.primary.secondMain};
+    font-size: 24px;
+    font-family: ${({ theme }) => theme.fonts.secondaryFont.style.fontFamily};
+    font-weight: 100;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `
